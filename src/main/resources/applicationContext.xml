@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+       http://www.springframework.org/schema/mvc 
+       http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.2.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+       
+       
+  <bean id="pink" class="com.jk.myspring.dao.impl.PinkColor"></bean>    
+  <bean id="black" class="com.jk.myspring.dao.impl.BlackColor"></bean> 
+  <bean id="A4" class="com.jk.myspring.dao.impl.A4Size"></bean> 
+  <bean id="B5" class="com.jk.myspring.dao.impl.B5Size"></bean> 
+  
+  <bean id="print" class="com.jk.myspring.entity.Print">
+  <property name="size" ref="A4"></property>
+  <property name="color" ref="pink"></property>
+  </bean>
+</beans>
